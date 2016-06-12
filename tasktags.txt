@@ -1,0 +1,13 @@
+Hight-priority
+FIXME - Indicates a bug that needs to be fixed (or things that work but aren't smooth/fast/efficient/clean/etc.)
+NOW - Indicates what should be done next or in the near future
+
+Normal-priority
+STUB - Indicates a method/class/blockofcode/etc. hasn't been build/finished yet
+TODO - Speaks for itself
+CHECK - Indicates a method needs to be checked for refactoring or any other sort of checking before a release
+XXX - I actually don't know but eclipse uses it so it's in here too
+
+Low-priority
+NOTE - Low - Speaks for itself
+FUTURE - Low - Indicates code that could cause problems later on, making bug fixes easier
