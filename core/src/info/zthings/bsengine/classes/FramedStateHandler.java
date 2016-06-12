@@ -25,9 +25,6 @@ public class FramedStateHandler {
 				index++;
 				if (lis != null) lis.onStateChanged(index - 1, index, map);
 				if ((int) fr < infinityTreshold) nextTreshold += map[index];
-				else {
-					System.out.println("Reached infinity");
-				}
 			}
 		}
 	}

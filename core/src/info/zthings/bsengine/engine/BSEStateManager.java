@@ -58,8 +58,6 @@ public class BSEStateManager {
 			//If the state hasn't changed it's safe to render
 			if (states.peek().equals(prevState)) states.peek().render(BSEController.getSpriteBatch(), BSEController.getAssets());
 		} else { //Update & Render loading animation
-			System.out.println("Loading");
-			
 			if (!states.peek().getClass().isAnnotationPresent(NoLoadingAnimation.class)) {
 				BSEController.getLoadingTexture().setRotation(BSEController.getLoadingTexture().getRotation()-200*Gdx.graphics.getDeltaTime());
 				BSEController.getLoadingTexture().setPosition((BSEController.getWidth()/2)-32, (BSEController.getHeight()/2)-(32));

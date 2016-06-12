@@ -11,21 +11,20 @@ public class BSEGameLoop implements Disposable {
 
 	public BSEGameLoop(boolean debug, AState startstate) {
 		BSEController.init(debug);
-		System.out.println("Handing game-loop over to the GameStateManager\n");
+		System.out.println("Handing game-loop over to the GameStateManager\n\n");
 		BSEStateManager.pushOnTop(startstate);
-		System.out.println("Finished initialisation");
-		System.out.println();
+		System.out.println("Finished initialisation\n");
 	}
 	
 	@Override
 	public void dispose() {
-		System.out.println("\n===========DISPOSING GAME===========\n");
+		System.out.println("\n\n===========DISPOSING GAME===========\n");
 		BSEController.getAssets().disposeSingulars();
 		BSEStateManager.dispose();
 		int c = BSEController.getAssets().size();
 		BSEController.dispose();
 		if ((c-BSEController.getAssets().size()) > 0) System.err.println("CAUGHT MEMORY LEAK OF " + (c-BSEController.getAssets().size()) + " ASSETS");
-		System.out.println("\n===========DISPOSED GAME===========\n");
+		System.out.println("===========DISPOSED GAME===========\n");
 	}
 
 	public void tick() {
