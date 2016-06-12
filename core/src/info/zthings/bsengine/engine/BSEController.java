@@ -125,8 +125,7 @@ public class BSEController {
 		y -= 15;
 		try {
 			Class<?> c = BSEStateManager.peek().getClass();
-			while(c.getSuperclass() != null) {
-				c = c.getSuperclass();
+			do {
 				for (Field field : ClassReflection.getDeclaredFields(c)) {
 				    field.setAccessible(true);
 				    Object value = field.get(BSEStateManager.peek());
@@ -136,7 +135,8 @@ public class BSEController {
 				        if (MiscUtil.formatObjectString(value).contains("\n")) y -= 15;
 				    }
 				}
-			}
+				c = c.getSuperclass();
+			} while(c != null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
