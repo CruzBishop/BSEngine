@@ -16,10 +16,10 @@ public class BSEStateManager {
 		if (clearUI) BSEController.getUI().clear();
 		if (states.size() > 0) System.out.println("====STATE " + state.getClass().getSimpleName() + " WAS PUSHED OVER " + states.peek().getClass().getSimpleName() + "====");
 		else System.out.println("====STATE " + state.getClass().getSimpleName() + " WAS PUSHED ON TOP OF NOTHING====");
+		BSEController.getSpriteBatch().setColor(Color.WHITE);
 		state.init(BSEController.getAssets());
 		states.push(state);
 		BSEController.createStateDebugData(state);
-		BSEController.getSpriteBatch().setColor(Color.WHITE);
 	}
 	
 	//FUTURE all singulars are disposed, but if the underlaying state uses singular assets that can/will break stuff
@@ -45,10 +45,10 @@ public class BSEStateManager {
 		BSEController.getAssets().disposeSingulars();
 		states.pop().dispose();
 		if (clearUI) BSEController.getUI().clear();
+		BSEController.getSpriteBatch().setColor(Color.WHITE);
 		state.init(BSEController.getAssets());
 		states.push(state);
 		BSEController.createStateDebugData(state);
-		BSEController.getSpriteBatch().setColor(Color.WHITE);
 	}
 	
 	public static void tick() {
