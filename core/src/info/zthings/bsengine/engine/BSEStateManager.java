@@ -63,7 +63,6 @@ public class BSEStateManager {
 				BSEController.getLoadingTexture().setPosition((BSEController.getWidth()/2)-32, (BSEController.getHeight()/2)-(32));
 		    	BSEController.getLoadingTexture().draw(BSEController.getSpriteBatch());
 			}
-		    
 		    if (BSEController.getAssets().update()) states.peek().postInit(BSEController.getAssets());
 		}
 	}

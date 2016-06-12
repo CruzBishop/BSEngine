@@ -46,6 +46,7 @@ public class BSEController {
 	public static void init(boolean debugMode) {
 		System.out.println("Initialising BSEngine");
 		cam = new OrthographicCamera(BSEController.getHeight(), BSEController.getHeight());
+		cam.setToOrtho(false, (float)dim.getWidth(), (float)dim.getHeight());
 		cam.position.set(BSEController.getWidth() / 2, BSEController.getHeight() / 2, 0);
 		port = new FitViewport(BSEController.getWidth(), BSEController.getHeight(), BSEController.getCamera());
 		
@@ -61,7 +62,7 @@ public class BSEController {
 		loadingTex = new Texture(Gdx.files.internal("images/loading.png"));
 		loading = new Sprite(loadingTex);
 		
-		ui = new Stage(port, batch);
+		ui = new Stage(port);
 		Gdx.input.setInputProcessor(ui);
 
 		mapLoader = new TmxMapLoader();

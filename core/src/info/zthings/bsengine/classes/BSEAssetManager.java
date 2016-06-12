@@ -104,7 +104,7 @@ public class BSEAssetManager implements Disposable, Iterable<String> {
 		
 		skin.add("default", buttStyle);
 		ImageButton butt = new ImageButton(skin);
-		butt.addListener(inputListener);
+		if (inputListener != null) butt.addListener(inputListener);
 		markGarbage(skin, "button_"+filealias, true);
 		return butt;
 	}
