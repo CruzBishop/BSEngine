@@ -124,14 +124,18 @@ public class BSEController {
 		}
 		y -= 15;
 		try {
-			for (Field field : ClassReflection.getDeclaredFields(BSEStateManager.peek().getClass())) {
-			    field.setAccessible(true);
-			    Object value = field.get(BSEStateManager.peek());
-			    if (value != null && !field.isFinal()) {
-			    	debugFont.draw(BSEController.getSpriteBatch(), field.getName() + " = " + MiscUtil.formatObjectString(value), 0, y);
-			        y -= 15;
-			        if (MiscUtil.formatObjectString(value).contains("\n")) y -= 15;
-			    }
+			Class<?> c = BSEStateManager.peek().getClass();
+			while(c.getSuperclass() != null) {
+				c = c.getSuperclass();
+				for (Field field : ClassReflection.getDeclaredFields(c)) {
+				    field.setAccessible(true);
+				    Object value = field.get(BSEStateManager.peek());
+				    if (value != null && !field.isFinal()) {
+				    	debugFont.draw(BSEController.getSpriteBatch(), field.getName() + " = " + MiscUtil.formatObjectString(value), 0, y);
+				        y -= 15;
+				        if (MiscUtil.formatObjectString(value).contains("\n")) y -= 15;
+				    }
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
