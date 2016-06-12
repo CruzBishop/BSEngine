@@ -1,13 +1,16 @@
-#LIBGDX
+#LibGDX
 desktop
 assets
 
-#GRADLE
-gradle*
-.gradle
-
-#ECLIPSE
+#Eclipse
 bin
 .settings
 .classpath
 .project
+
+#IntelliJ IDEA
+.idea/
+
+#Gradle (fixed)
+.gradle/
+*/gradle/wrapper/*
