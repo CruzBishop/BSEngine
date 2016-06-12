@@ -6,4 +6,7 @@ public abstract class AStateFSH extends AState {
 	protected FramedStateHandler fsh;
 
 	public AStateFSH(int[] map, int speed) {fsh = new FramedStateHandler(map, speed);}
+	
+	@Override
+	public void update(float dt) {fsh.update(dt);}
 }
