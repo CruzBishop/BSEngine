@@ -1,0 +1,13 @@
+#LIBGDX
+desktop
+assets
+
+#GRADLE
+gradle*
+.gradle
+
+#ECLIPSE
+bin
+.settings
+.classpath
+.project
