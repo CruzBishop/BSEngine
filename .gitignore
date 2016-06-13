@@ -10,7 +10,7 @@ bin
 
 #IntelliJ IDEA
 .idea/
-*/build/
+build/
 
 #Gradle (fixed)
 .gradle/
